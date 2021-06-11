@@ -1,6 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
+import logo from "./logo.svg"
+import "./App.css"
 
+/**
+ * The main component (or entry point) for the React App
+ *
+ * @function
+ * @name App
+ * @returns {React.Component} The rendered JSX component
+ */
 function App() {
   return (
     <div className="App">
@@ -19,7 +27,7 @@ function App() {
         </a>
       </header>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
