@@ -5,10 +5,11 @@ import Link from "./Link"
 import Button from "./Button"
 import AppLogo from "./AppLogo"
 import AppHeader from "./AppHeader"
+import ButtonGroup from "./ButtonGroup"
 import { PropTypesTheme } from "../theme"
 
 const StyledApp = styled.div`
-  display: block;
+  display: grid;
   text-align: center;
 `
 
@@ -38,8 +39,10 @@ function App() {
         >
           Do you even React, bro?
         </Link>
-        <Button>Yes</Button>
-        <Button>No</Button>
+        <ButtonGroup gap="1em">
+          <Button>Yes</Button>
+          <Button disabled>No</Button>
+        </ButtonGroup>
       </AppHeader>
     </StyledApp>
   )

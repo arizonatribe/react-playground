@@ -4,14 +4,15 @@ import styled from "styled-components"
 import { PropTypesTheme } from "../theme"
 
 const StyledButton = styled.button`
+  padding: 1em;
   display: block;
-  cursor: pointer;
   text-align: center;
   text-decoration: none;
-  padding: 1em;
   text-shadow: 2px 2px 4px darkgray;
+  opacity: ${p => (p.disabled ? 0.5 : 1)};
   color: ${p => p.theme?.colors?.textColor};
   background-color: ${p => p.theme?.colors?.primary};
+  cursor: ${p => (p.disabled ? "not-allowed" : "pointer")};
 
   border: none;
   border-radius: 3px;
@@ -21,6 +22,7 @@ const StyledButton = styled.button`
 `
 
 StyledButton.propTypes = {
+  disabled: PropTypes.bool,
   theme: PropTypesTheme
 }
 
@@ -29,7 +31,7 @@ StyledButton.propTypes = {
  *
  * @function
  * @name Button
- * @param {string} props.type The type of button (ie, 'button', 'submit', 'reset')
+ * @param {string} props.type The type of button (ie, 'button', 'submit')
  * @param {string} [props.name] The form element name for the button
  * @param {boolean} [props.disabled] Whether or not the button is disabled
  * @param {PropTypes.element} props.children Content to render inside the button (usually a label, but can be another HTML element)
